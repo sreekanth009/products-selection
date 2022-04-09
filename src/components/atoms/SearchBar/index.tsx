@@ -52,10 +52,12 @@ const SearchBar: React.FC = () => {
 
   // Set selected products in local storage.
   const handleNext = () => {
-    localStorage.setItem(
-      "selected_products",
-      JSON.stringify(selectedProductList)
-    );
+    if (selectedProductList.length) {
+      localStorage.setItem(
+        "selected_products",
+        JSON.stringify(selectedProductList)
+      );
+    }
   };
 
   return (
