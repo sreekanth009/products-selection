@@ -7,9 +7,6 @@ function App() {
     <div className="App">
       <ProductSelectionProvider>
         <ProductSelectionPage />
-        {/* <div className="relative bg-black overflow-hidden">
-          <h1 className="text-3xl font-bold underline">Hello world!</h1>
-        </div> */}
       </ProductSelectionProvider>
     </div>
   );
