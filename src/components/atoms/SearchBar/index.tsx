@@ -11,8 +11,11 @@ const SearchBar: React.FC = () => {
   const [active, setActive] = useState(false);
   const [searchWord, setSearchWord] = useState("");
   const [searchedResultList, setSearchedResultList] = useState(productList);
-
   const ref = useRef<HTMLUListElement>(null);
+
+  const setToaster = () => {
+    alert("Saved to local storage!");
+  };
 
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
@@ -58,6 +61,7 @@ const SearchBar: React.FC = () => {
         JSON.stringify(selectedProductList)
       );
     }
+    setTimeout(setToaster, 1000);
   };
 
   return (
