@@ -1,5 +1,6 @@
 import React, { useState, useContext, useRef, useEffect } from "react";
 import { AiOutlineSearch } from "react-icons/ai";
+import { BiCheck } from "react-icons/bi";
 import { productList } from "../../../constants/productList";
 import { IProductList } from "../../../@types/index";
 import { ProductSelectionContext } from "../../../contextProvider/ProductSelectionProvider";
@@ -91,7 +92,7 @@ const SearchBar: React.FC = () => {
                 return (
                   <li
                     key={item.id}
-                    className={`items-center mb-2 p-2 cursor-pointer ${
+                    className={`flex items-center mb-2 p-2 cursor-pointer relative ${
                       selectedProductList && selectedProductList.includes(item)
                         ? "bg-blue-700 text-white rounded pointer-events-none"
                         : "text-black"
@@ -105,9 +106,17 @@ const SearchBar: React.FC = () => {
                     <img
                       src={item.icon}
                       alt={item.title}
-                      className={"w-5 h-5 float-left mr-2"}
+                      className={"w-5 h-5 mr-2"}
                     />
                     <p className={"text-sm text-black-600"}>{item.title}</p>
+                    {selectedProductList &&
+                    selectedProductList.includes(item) ? (
+                      <BiCheck
+                        className={"text-white-600 text-xl absolute right-3"}
+                      />
+                    ) : (
+                      ""
+                    )}
                   </li>
                 );
               })
