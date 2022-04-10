@@ -14,7 +14,7 @@ const SearchBar: React.FC = () => {
   const ref = useRef<HTMLUListElement>(null);
 
   const setToaster = () => {
-    alert("Saved to local storage!");
+    alert("Products saved in local storage!");
   };
 
   useEffect(() => {
